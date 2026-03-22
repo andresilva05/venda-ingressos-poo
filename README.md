@@ -34,4 +34,4 @@ Sistema de venda de ingressos com interface gráfica Swing, com suporte a persis
 - `feature/threads`: Proteção `synchronized`, daemon de salvamento a cada 500ms, simuladores com `Runnable` e campo `transient`.
 
 ## Autor
-André Silva (Turma - Preencher a critério do aluno)
+André Silva
