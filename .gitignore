@@ -1,0 +1,9 @@
+*.class
+*.ser
+/build/
+/dist/
+nbproject/private/
+.idea/
+*.iml
+out/
+meu_relatorio.txt
