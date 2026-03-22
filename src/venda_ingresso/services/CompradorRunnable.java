@@ -24,10 +24,11 @@ public class CompradorRunnable implements Runnable {
             Ingresso ingresso = new Ingresso() ;
 
             ingresso.setNome(nome);
-            ingresso.setSetor(setor);
+            ingresso.setSetor(setor.getDescricao());
+            ingresso.setValor(setor.getPreco());
             ingresso.setQuantidade(quantidade);
 
-            gerenciadorIngresso.comprarIngresso(ingresso)
+            gerenciadorIngresso.comprarIngresso(ingresso);
 
         } catch (InterruptedException interrupt) {
             Thread.currentThread().interrupt();
