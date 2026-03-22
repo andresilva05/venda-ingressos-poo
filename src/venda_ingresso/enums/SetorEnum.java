@@ -1,4 +1,4 @@
-package Venda_Ingresso.enuns;
+package venda_ingresso.enums;
 
 public enum SetorEnum {
 

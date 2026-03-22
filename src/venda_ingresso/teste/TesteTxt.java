@@ -1,7 +1,7 @@
-package Venda_Ingresso.teste;
+package venda_ingresso.teste;
 
-import Venda_Ingresso.entities.Ingresso;
-import Venda_Ingresso.services.GerenciadorArquivo;
+import venda_ingresso.entities.Ingresso;
+import venda_ingresso.services.GerenciadorArquivo;
 
 
 import java.util.ArrayList;

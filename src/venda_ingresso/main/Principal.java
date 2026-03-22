@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Venda_Ingresso.main;
+package venda_ingresso.main;
 
-import Venda_Ingresso.ui.TelaInicial;
+import venda_ingresso.ui.TelaInicial;
 
 /**
  *

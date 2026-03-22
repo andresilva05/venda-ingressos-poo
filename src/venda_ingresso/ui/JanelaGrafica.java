@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Venda_Ingresso.ui;
+package venda_ingresso.ui;
 
-import Venda_Ingresso.entities.Ingresso;
-import Venda_Ingresso.services.GerenciadorIngresso;
+import venda_ingresso.entities.Ingresso;
+import venda_ingresso.services.GerenciadorIngresso;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

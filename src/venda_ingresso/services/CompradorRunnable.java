@@ -1,7 +1,7 @@
-package Venda_Ingresso.services;
+package venda_ingresso.services;
 
-import Venda_Ingresso.entities.Ingresso;
-import Venda_Ingresso.enuns.SetorEnum;
+import venda_ingresso.entities.Ingresso;
+import venda_ingresso.enums.SetorEnum;
 
 public class CompradorRunnable implements Runnable {
     private String nome;

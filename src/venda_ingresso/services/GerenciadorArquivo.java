@@ -1,6 +1,6 @@
-package Venda_Ingresso.services;
+package venda_ingresso.services;
 
-import Venda_Ingresso.entities.Ingresso;
+import venda_ingresso.entities.Ingresso;
 
 import java.io.*;
 import java.util.ArrayList;

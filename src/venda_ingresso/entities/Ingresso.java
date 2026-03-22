@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Venda_Ingresso.entities;
+package venda_ingresso.entities;
 
-import Venda_Ingresso.exceptions.QuantidadeInvalidaException;
+import venda_ingresso.exceptions.QuantidadeInvalidaException;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

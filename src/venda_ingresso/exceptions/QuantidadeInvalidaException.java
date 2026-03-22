@@ -1,4 +1,4 @@
-package Venda_Ingresso.exceptions;
+package venda_ingresso.exceptions;
 
 public class QuantidadeInvalidaException extends RuntimeException {
     public QuantidadeInvalidaException(String mensagem) {
