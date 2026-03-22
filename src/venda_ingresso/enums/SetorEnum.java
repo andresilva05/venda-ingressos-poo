@@ -2,19 +2,25 @@ package venda_ingresso.enums;
 
 public enum SetorEnum {
 
-    AMARELO("Amarelo", 180.0),
-    AZUL("Azul", 100.0),
-    BRANCO("Branco", 60.0),
-    VERDE("Verde", 350.0);
+    AMARELO("Amarelo", 180.0, 10),
+    AZUL("Azul", 100.0, 10),
+    BRANCO("Branco", 60.0, 10),
+    VERDE("Verde", 350.0, 10);
 
     // final quer dizer que não pode mudar depois de criado
     private final String descricao;
     private final double preco;      // valor do ingresso nesse setor
+    private final int limiteIngressos; // máximo de ingressos nesse setor
 
     // construtor do enum - roda quando cria cada um dos setores acima
-    SetorEnum(String descricao, double preco) {
+    SetorEnum(String descricao, double preco, int limiteIngressos) {
         this.descricao = descricao;
         this.preco = preco;
+        this.limiteIngressos = limiteIngressos;
+    }
+
+    public int getLimiteIngressos() {
+        return limiteIngressos;
     }
 
     public static SetorEnum fromDescricao(String descricao) {

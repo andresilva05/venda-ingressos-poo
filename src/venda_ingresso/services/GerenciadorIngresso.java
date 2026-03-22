@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import venda_ingresso.enums.SetorEnum;
 
 /**
  *
@@ -22,7 +23,6 @@ public class GerenciadorIngresso {
     private ArrayList<Ingresso> ingressos;          // lista com todas as compras
     private int prox = 0;                           // próximo código a ser usado
     private Map<String, Integer> ingressosPorSetor; // conta quantos ingressos por setor
-    private final int LIMITE_POR_SETOR = 10;        // máximo de ingressos por setor
 
     public GerenciadorIngresso() {
         ingressos = new ArrayList<>();
@@ -41,12 +41,18 @@ public class GerenciadorIngresso {
         // verifica quantos já foram vendidos nesse setor
         int vendidos = ingressosPorSetor.getOrDefault(setor, 0);
 
-        // ve se passa do limite
-        if (vendidos + quantidadeComprada > LIMITE_POR_SETOR) {
+        // ve se passa do limite dinâmico do setor
+        SetorEnum setorEnum = SetorEnum.fromDescricao(setor);
+        if (setorEnum == null) {
+            throw new IllegalArgumentException("Setor inválido: " + setor);
+        }
+        int limiteDoSetor = setorEnum.getLimiteIngressos();
+
+        if (vendidos + quantidadeComprada > limiteDoSetor) {
             // se passar, lança exceção com mensagem explicando
             throw new SetorEsgotadoException("Setor " + setor + " não tem capacidade para " +
                     quantidadeComprada + " ingressos. Disponível: " +
-                    (LIMITE_POR_SETOR - vendidos));
+                    (limiteDoSetor - vendidos));
         }
 
         // dá um novo código pro ingresso (incrementa antes de usar)
