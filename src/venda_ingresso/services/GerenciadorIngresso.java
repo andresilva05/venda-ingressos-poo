@@ -30,7 +30,8 @@ public class GerenciadorIngresso {
     }
 
     // tenta comprar um ingresso (ou vários de uma vez)
-    public boolean comprarIngresso(Ingresso ingresso) {
+    // M03 - Adicionado synchronized
+    public synchronized boolean comprarIngresso(Ingresso ingresso) {
         if (ingresso == null) {
             return false;  // veio um ingresso vazio, não faz nada
         }
@@ -60,6 +61,9 @@ public class GerenciadorIngresso {
         ingresso.setCodigo(++prox);
         System.out.println("DEPOIS - novo código: " + prox + " para " + ingresso.getNome());
 
+        // M04 - Registra o nome da thread atual
+        ingresso.setThreadOrigem(Thread.currentThread().getName());
+
         // calcula o valor total (preço unitário * quantidade)
         ingresso.setValorTotal(ingresso.getValor() * quantidadeComprada);
 
@@ -76,12 +80,14 @@ public class GerenciadorIngresso {
     }
 
     // retorna a lista com todas as compras
-    public ArrayList<Ingresso> getIngressos() {
+    // M03 - Adicionado synchronized
+    public synchronized ArrayList<Ingresso> getIngressos() {
         return ingressos;
     }
 
     // substitui a lista inteira (usado quando carrega do arquivo)
-    public void setIngressos(ArrayList<Ingresso> ingressos) {
+    // M03 - Adicionado synchronized
+    public synchronized void setIngressos(ArrayList<Ingresso> ingressos) {
         this.ingressos = ingressos;
 
         // precisa reconstruir o mapa de setores com os dados carregados

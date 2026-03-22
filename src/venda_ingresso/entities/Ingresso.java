@@ -25,6 +25,7 @@ public class Ingresso implements Serializable {
     private int quantidade;
     private double valorTotal;
     private String dataHora;
+    private transient String threadOrigem; // não será salvo no arquivo (M07)
 
     public Ingresso() {
     }
@@ -98,6 +99,14 @@ public class Ingresso implements Serializable {
 
         // junta data e hora com um espaço no meio
         this.dataHora = dataFormatada + " " + horaFormatada;
+    }
+
+    public String getThreadOrigem() {
+        return threadOrigem;
+    }
+
+    public void setThreadOrigem(String threadOrigem) {
+        this.threadOrigem = threadOrigem;
     }
 
     // esses dois métodos (hashCode e equals) são para comparar ingressos
